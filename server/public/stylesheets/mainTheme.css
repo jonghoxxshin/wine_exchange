@@ -1,0 +1,17 @@
+/*div {*/
+    /*background: wheat;*/
+    /*padding: 20px;*/
+    /*border-radius: 10px;*/
+/*}*/
+
+.post-text {
+    font-size: large;
+    font-weight: bold;
+}
+.post-name {
+    font-size: medium;
+}
+.post-year {
+    font-size: medium;
+    font-weight: lighter;
+}

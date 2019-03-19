@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/mainTheme.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div class="hd">
+                <div class="cover">
+                    <h1>
+                        <a href="/">
+                            <img src="resource/wine_exchange_logo.png" alt="wine_exchange_logo" width="100" height="100" >
+                        </a>
+                    </h1>
+                    <div class="category">
+                        <ul class="cate0">
+                            <li><a href="/">Red Wine</a></li>
+                            <li> <a href="/">White Wine</a></li>
+                            <li> <a href="/">Champagne</a></li>
+                            <li> <a href="/">Ice Wine</a></li>
+                            <li> <a href="/">Vodka</a></li>
+                            <li> <a href="/">Whiskey</a></li>
+                            <li> <a href="/">Gin</a></li>
+                            <li> <a href="/">Rum</a></li>
+                            <li> <a href="/">Tequila</a></li>
+                        </ul>
+                    </div>
+                    <div class="statelog">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="container">
+            <h1>Dashboard</h1>
+            <button id="new_post" onclick="window.location.href='./newPost'">ADD</button>
+            <hr>
+            <div id="posts">
+            <% for(let i in list) { %>
+                <div id="post<%=i%>" ondblclick="dblClickDelete('<%=list[i]._id%>', <%=i%>)">
+                    <p class="post-text">text : <%= JSON.stringify(list[i].text)%></p>
+                    <p class="post-name">name : <%= JSON.stringify(list[i].name)%></p>
+                    <p class="post-year">year : <%= JSON.stringify(list[i].year)%></p>
+                    <p class="post-date">date : <%= JSON.stringify(list[i].date)%></p>
+                </div>
+                <hr id="hr<%=i%>">
+            <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function dblClickDelete(id, i){
+        $.ajax({
+            url: "http://localhost:8000/" + id,
+            method: "delete",
+            crossDomain: true,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+                _id:id
+            }),
+            success : function () {
+                console.log("dbl");
+                const parent = document.getElementById("posts");
+                parent.removeChild(document.getElementById("post" + i));
+                parent.removeChild(document.getElementById("hr" + i));
+
+            }
+        });
+    }
+
+</script>
+</html>
