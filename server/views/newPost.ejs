@@ -10,16 +10,18 @@
         <link rel="stylesheet" type="text/css" href="stylesheets/mainTheme.css">
         <title>New Post</title>
     </head>
-
     <body>
-        <form action="/newPost" method="post">
-            <input name="text" id="text" placeholder="Name of the product"/>
-            <br>
-            <input name="name" id="name" placeholder="Name of the Person"/>
-            <br>
-            <input name="year" id="year" placeholder="Production year"/>
-            <hr>
-            <button type="submit">ADD</button>
-        </form>
+
+        <div id="addNew">
+            <form action="/newPost" method="post">
+                <input name="text" id="text" placeholder="Name of the product"/>
+                <br>
+                <input name="name" id="name" placeholder="Name of the Person"/>
+                <br>
+                <input name="year" id="year" placeholder="Production year"/>
+                <hr>
+                <button type="submit">ADD</button>
+            </form>
+        </div>
     </body>
 </html>

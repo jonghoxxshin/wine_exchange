@@ -15,13 +15,13 @@
         <div id="header">
             <div class="hd">
                 <div class="cover">
-                    <h1>
+                    <h1 class="logo">
                         <a href="/">
                             <img src="resource/wine_exchange_logo.png" alt="wine_exchange_logo" width="100" height="100" >
                         </a>
                     </h1>
                     <div class="category">
-                        <ul class="cate0">
+                        <ul class="cate0" id="horizontal-list">
                             <li><a href="/">Red Wine</a></li>
                             <li> <a href="/">White Wine</a></li>
                             <li> <a href="/">Champagne</a></li>
@@ -33,14 +33,13 @@
                             <li> <a href="/">Tequila</a></li>
                         </ul>
                     </div>
-                    <div class="statelog">
-                    </div>
                 </div>
 
             </div>
         </div>
         <div id="container">
             <h1>Dashboard</h1>
+            <button id="login_button" onclick="window.location.href='./loginPage'">Login</button>
             <button id="new_post" onclick="window.location.href='./newPost'">ADD</button>
             <hr>
             <div id="posts">
